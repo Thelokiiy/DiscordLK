@@ -34,7 +34,7 @@ h1 {
 }
 
 .background {
-    background-image: url('https://i.pinimg.com/originals/ec/45/9f/ec459fda615fd42d62fdcc6eca90e4f3.jpg');
+    background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
