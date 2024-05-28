@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Trading LK (Conectado como [Nombre de Usuario])</h1>
+        <h1 id="userGreeting">Trading LK (Conectado)</h1>
         <div class="login">
             <a href="index.html">Cerrar sesión</a>
         </div>
@@ -21,6 +21,26 @@
     <footer class="footer">
         <p>© 2024 Inversiones y Trading en USA - Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Función para obtener información del usuario de Discord
+        function getUserInfo() {
+            fetch('https://discord.com/api/users/@me', {
+                headers: {
+                    'Authorization': 'Bearer ' + YOUR_DISCORD_ACCESS_TOKEN
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('userGreeting').innerText += " - " + data.username;
+            })
+            .catch(error => console.error('Error al obtener información del usuario:', error));
+        }
+
+        // Llamar a la función para obtener la información del usuario cuando la página se cargue
+        window.onload = function() {
+            getUserInfo();
+        };
+    </script>
 </body>
 </html>
-
